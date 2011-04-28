@@ -31,6 +31,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano
-  sinatra
-  thin
+  capistrano (= 2.5.21)
+  sinatra (= 1.2.3)
+  thin (= 1.2.11)

@@ -12,19 +12,21 @@ end
 
 set :application, "testsin"
 set :user, "ubuntu"
-set :use_sudo, false
+set :use_sudo, true
 
 set :scm, :git
-set :repository,  "git@github.com:wiseleyb/testsin.git"
+set :repository,  "git://github.com/wiseleyb/testsin.git"
 set :deploy_via, :remote_cache
 set :deploy_to, "/home/#{user}/#{application}"
 
-role :app, "ec2-50-16-168-235.compute-1.amazonaws.com"
-role :web, "ec2-50-16-168-235.compute-1.amazonaws.com"
-role :db,  "ec2-50-16-168-235.compute-1.amazonaws.com", :primary => true
+set :runner, "#{user}"
+set :admin_runner, "#{user}"
 
-set :runner, user
-set :admin_runner, user
+set :key_pair, "uopen" # ec2 key-pair name, store it in ~/.ssh/ec2/
+
+# deploy to ec2
+ssh_options[:keys] = "~/.ssh/ec2/#{key_pair}.pem"
+server "ubuntu@ec2-50-16-168-235.compute-1.amazonaws.com", :app, :web, :db, :primary => true
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
@@ -45,6 +47,7 @@ namespace :deploy do
     deploy.update
     deploy.start
   end
+  
 end
 
 namespace :acoplet do
