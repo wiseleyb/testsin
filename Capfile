@@ -43,6 +43,6 @@ end
 
 namespace :acoplet do
   task :log do
-    run "cat #{deploy_to}/current/log/thin.log"
+    run "cat #{deploy_to}/shared/log/thin.log"
   end
 end
