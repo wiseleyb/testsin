@@ -45,7 +45,7 @@ namespace :deploy do
   # This will make sure that Capistrano doesn't try to run rake:migrate (this is not a Rails project!)
   task :cold do
     deploy.update
-    deploy.start
+    deploy.restart
   end
   
 end

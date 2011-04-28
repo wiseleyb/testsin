@@ -12,3 +12,7 @@ end
 get '/bob' do
   "Jim"
 end
+
+get '/jim' do
+  "Bob"
+end
