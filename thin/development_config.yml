@@ -1,0 +1,13 @@
+environment: development
+chdir: /Users/wiseleyb/dev/uopen/testsin/
+address: 0.0.0.0
+user: wiseleyb
+# group: admin
+port: 3000
+pid: /Users/wiseleyb/dev/uopen/testsin/tmp/thin.pid
+rackup: /Users/wiseleyb/dev/uopen/testsin/config.ru
+log: /Users/wiseleyb/dev/uopen/testsin/log/thin.log
+max_conns: 1024
+timeout: 30
+max_persistent_conns: 512
+daemonize: true
