@@ -2,6 +2,7 @@ Very simple sinatra app to test cap deploying to ec2
 
 Largely taken from:
 http://pemberthy.blogspot.com/2009/02/deploying-sinatra-applications-with.html
+https://gist.github.com/1a0f6a9ada817604e0f2
 
 Deploying to an ami-3202f25b with ruby 1.9.2 installed
 

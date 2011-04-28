@@ -1,4 +1,14 @@
 load 'deploy' if respond_to?(:namespace)
+require 'bundler/capistrano'
+
+def ec2_address(input='get')
+  file = 'deploy/server'
+  if input == 'get'
+    (File.read(file) rescue 'NO-SERVER').strip
+  else
+    File.open(file,'w'){|f|f.write(input)}
+  end
+end
 
 set :application, "testsin"
 set :user, "ubuntu"
