@@ -16,3 +16,7 @@ end
 get '/jim' do
   "Bob"
 end
+
+get '/eat-lunch' do
+  "Bob and Jim"
+end
